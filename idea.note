@@ -1,0 +1,13 @@
+1. Summon the first villager at the player (a.mcfunction), tagged with o
+2. `execute as @e[type=villager,tag=o] at @s run function b`
+3. function b has the rest of the villagers
+4. `execute at @s run summon villager ~x_off ~ ~z_off {VillagerData:{Offers:{},profession:"minecraft:PROF",type:"minecraft:TYPE"}}`
+    e.g.
+format!{
+#"execute at @s run summon villager ~{x_off} ~ ~{z_off} {{FallDistance:255f,OnGround:0b,NoAI:1b,Silent:1b,Tags:["o"],VillagerData:{{Offers:{{}},profession:"minecraft:{PROF}",type:"minecraft:{TYPE}"}}}}"#
+}
+
+NBT:
+{VillagerData:{profession:"minecraft:farmer",type:"minecraft:plains",Offers:{}}}
+
+NoAI, Silent
