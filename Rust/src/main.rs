@@ -23,11 +23,12 @@ fn main() -> std::io::Result<()> {
 
             for profession in professions {
                 let line = format!(
-                    r#"execute at @s run summon {species} ~{x_off} ~ ~{z_off} {{NoAI:1b,Silent:1b,Tags:["statue"],VillagerData:{{,profession:"minecraft:{profession}",type:"minecraft:{biome}"}},ArmorItems:[{{}},{{}},{{}},{{"id":"stone_button","Count":1b}}]}}"#
+                    r#"execute at @s run summon {species} ~{x_off} ~ ~{z_off} {{PersistenceRequired:1b,NoAI:1b,Silent:1b,Tags:["statue"],VillagerData:{{profession:"minecraft:{profession}",type:"minecraft:{biome}"}},ArmorItems:[{{}},{{}},{{}},{{"id":"stone_button","Count":1b}}]}}"#
                 );
                 if !is_first_villager {
                     write!(out, "{}\n", line)?;
                 } else {
+                    println!("{}", line);
                     is_first_villager = false;
                 }
                 x_off += dx;

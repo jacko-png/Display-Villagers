@@ -6,9 +6,12 @@ Usage
 Installation
 ------------
 1. Download the latest release (or latest for your version/pack format)
-2. Add to the save's datapack folder
+2. Add to the save's datapack folder. You don't need to apply it in-game, unlike resource packs.
       • `%appdata%\.minecraft.saves`
-3. Apply datapack in options menu
+3. If in world, run `/reload`.
+<!---
+'/' is included in the installation section for usability, but intentionally not included elsewhere.
+-->
 
 Usage
 -----
